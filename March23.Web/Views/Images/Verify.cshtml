@@ -1,0 +1,18 @@
+﻿@model VerifyViewModel
+<div>
+<div class="row">
+    <div class="col-md-6 offset-md-3 jumbotron">
+        @if(!String.IsNullOrEmpty(Model.Message))
+            {
+                <h4 class="alert-danger">@Model.Message</h4>
+            }
+        <h4>Please enter the password for this image:</h4>
+        <form method="post" action="/images/verify">
+            <input type="hidden" name="id" value="@Model.Id" />
+            <input type="password" class="form-control" placeholder="Password" name="password" />
+            <br />
+            <button class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+</div>
